@@ -43,7 +43,7 @@ if (!isset($_POST['contact'])) {
         <?php
     } else {
         if (!isset($GLOBALS['sent'])) {
-            $to = 'rsmallc18@gmail.com';
+            $to = 'mattbendel60@gmail.com';
             $subject = $name . ' - ' . $email . ' - ' . $county . ' County';
             mail($to, $subject, $message);
             $GLOBALS['sent'] = 'sent';
