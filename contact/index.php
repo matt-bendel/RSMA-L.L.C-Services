@@ -4,6 +4,9 @@ require_once('contact_views.php');
 require_once(get_root_dir() . '/static/html/header.php');
 require_once(get_root_dir() . '/hosting-nav.php');
 setHostingNav(array('Home','Contact Us'), 'Contact Us');
+
+require 'vendor/autoload.php';
+use Mailgun\Mailgun;
 ?>
 <!--Contact us forms start here-->
 <?php
@@ -45,8 +48,18 @@ if (!isset($_POST['contact'])) {
         if (!isset($GLOBALS['sent'])) {
             $to = 'mattbendel60@gmail.com';
             $subject = $name . ' - ' . $email . ' - ' . $county . ' County';
-            $test = mail($to, $subject, $message);
-            var_dump($test);
+
+            # Instantiate the client.
+            $mgClient = new Mailgun('284c125d45c2f111b58c522a809f3cad-8b34de1b-b8235432');
+            $domain = "https://api.mailgun.net/v3/sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org";
+            # Make the call to the client.
+            $result = $mgClient->sendMessage($domain, array(
+                'from'	=> $name . ' <' . $email . '>',
+                'to'	=> 'RSMA L.L.C <' . $to .'>',
+                'subject' => $subject,
+                'text'	=> $message
+            ));
+
             $GLOBALS['sent'] = 'sent';
         }
         getPostContactView($subject, $message);
