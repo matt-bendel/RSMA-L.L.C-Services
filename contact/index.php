@@ -45,7 +45,8 @@ if (!isset($_POST['contact'])) {
         if (!isset($GLOBALS['sent'])) {
             $to = 'mattbendel60@gmail.com';
             $subject = $name . ' - ' . $email . ' - ' . $county . ' County';
-            mail($to, $subject, $message);
+            $test = mail($to, $subject, $message);
+            var_dump($test);
             $GLOBALS['sent'] = 'sent';
         }
         getPostContactView($subject, $message);
