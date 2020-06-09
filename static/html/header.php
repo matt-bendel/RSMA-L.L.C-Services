@@ -35,7 +35,7 @@
     </script>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-primary container-fluid" style="background-color: slategrey;">
+<nav class="navbar navbar-default navbar-primary container-fluid" style="background-color: slategrey; box-shadow: 0px 2px 4px rgba(0,0,0,0.2); border-radius: 0 0 10px 10px">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="http://<?php echo get_root_url() ?>">Home</a>
