@@ -1,11 +1,11 @@
 <?php
 function getPreContactView($name = false, $email = false, $county = false, $message = false) {
 ?>
-    <div class="title-div">
+    <div id="contactForm" class="title-div">
         <p class="title-text">Enter your information below</p>
         <hr />
     </div>
-    <form id="contactForm" action="index.php" method="post" style="width: 80%; margin: 0 auto 0 auto;">
+    <form action="index.php" method="post" style="width: 80%; margin: 0 auto 0 auto;">
         <div class="center-div container search-again-div">
             <input type="hidden" name="contact" value="true" />
             <input type="text" name="name" class="form-control search-again-text-input" placeholder="Name*"

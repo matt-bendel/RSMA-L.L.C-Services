@@ -24,12 +24,22 @@
                 $('#warning-banner').hide();
             }
 
-            let $error = $('<div id="warning-banner" class="warning-banner" style="margin-bottom: 15px;"></div>');
+            let $error = $('<div id="warning-banner" class="warning-banner" style="margin-bottom: 15px; margin-top: 15px;"></div>');
             $('<p class="warning-stripe" ></p>').appendTo($error);
             $('<p id="warning-text" class="warning-text" ><strong>' + message + '</strong></p>').appendTo($error);
 
             $(document).ready(function() {
                 $('#contactForm').before($error);
+            });
+        }
+
+        function displayIdMessage(message) {
+            let $id = $('<div id="id-banner" class="id-banner" style="margin-bottom: 15px; margin-top: 15px;"></div>');
+            $('<p class="id-stripe" ></p>').appendTo($id);
+            $('<p id="id-text" class="id-text" ><strong>' + message + '</strong></p>').appendTo($id);
+
+            $(document).ready(function() {
+                $('#id-banner').before($id);
             });
         }
     </script>
@@ -38,11 +48,21 @@
 <nav class="navbar navbar-default navbar-primary container-fluid" style="background-color: slategrey; box-shadow: 0px 2px 4px rgba(0,0,0,0.2); border-radius: 0 0 10px 10px">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="http://<?php echo get_root_url() ?>">Home</a>
-        <a href="/what-is-a-notary">What is a Notary?</a>
-        <a href="/services">Our Services</a>
-        <a href="/fees">Fees</a>
-        <a href="/contact">Contact Us</a>
+        <div class="linkDiv">
+            <a href="http://<?php echo get_root_url() ?>" style="margin-right: 30px">Home</a>
+        </div>
+        <div class="linkDiv">
+            <a href="/what-is-a-notary">What is a Notary?</a>
+        </div>
+        <div class="linkDiv">
+            <a href="/services">Our Services</a>
+        </div>
+        <div class="linkDiv">
+            <a href="/fees">Fees</a>
+        </div>
+        <div class="linkDiv">
+            <a href="/contact">Contact Us</a>
+        </div>
     </div>
 
     <div class="navbar-brand" style="margin-left: 0px !important; padding-bottom: 0px !important; padding-top: 0px !important;">

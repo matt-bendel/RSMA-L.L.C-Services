@@ -4,7 +4,10 @@ require_once(get_root_dir() . '/static/html/header.php');
 require_once(get_root_dir() . '/hosting-nav.php');
 setHostingNav(array('Home','Services'), 'Our Services');
 ?>
-        <div class="title-div">
+        <script>
+            displayIdMessage('Note: Photo ID is required for Notarial Services.');
+        </script>
+        <div class="title-div" id="id-banner" >
             <p class="title-text">Title Services</p>
             <hr />
         </div>

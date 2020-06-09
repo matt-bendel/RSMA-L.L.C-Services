@@ -5,7 +5,10 @@ require_once('services.php');
 require_once(get_root_dir() . '/hosting-nav.php');
 setHostingNav(array('Home','Fees'), 'Our Fees');
 ?>
-    <div class="title-div">
+    <script>
+        displayIdMessage('Note: If your county is not listed below there may be additional fees.');
+    </script>
+    <div id="id-banner" class="title-div">
         <p class="title-text">Fees</p>
         <hr />
     </div>

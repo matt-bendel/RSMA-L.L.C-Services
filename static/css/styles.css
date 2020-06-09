@@ -31,6 +31,75 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.1s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: lightgrey;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: white;
+}
+
+.linkDiv {
+    padding-top: 15px;
+    height: 50px;
+}
+
+.linkDiv a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: lightgrey;
+    display: block;
+    transition: 0.3s;
+}
+
+.linkDiv a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: white;
+
+    position: absolute;
+    /*top: 0;*/
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+.linkDiv a:hover {
+    color: #f1f1f1;
+}
+
+.linkDiv a:hover::before {
+    width: 80%;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
 .topnav {
     display: table-cell;
     vertical-align: middle;
@@ -276,6 +345,31 @@ input[type=submit]:hover {
 }
 
 .warning-text {
+    margin-left: 34px;
+    margin-right: 40px;
+    margin-top: -53px !important;
+    font-size: 16px;
+    letter-spacing: -0.1px;
+    line-height: 24px;
+}
+
+.id-banner {
+    border-radius: 10px;
+    width: 95%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkseagreen;
+}
+
+.id-stripe {
+    border-radius: 10px 0 0 10px;
+    width: 10px;
+    height: 50px;
+    background-color: darkgreen;
+}
+
+.id-text {
     margin-left: 34px;
     margin-right: 40px;
     margin-top: -53px !important;
@@ -699,40 +793,6 @@ span.app-menu-icon
 #mainDiv {
     display: flex;
     margin-bottom: 70px;
-}
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.1 s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
 }
 
 @media screen and (max-height: 450px) {
