@@ -5,6 +5,9 @@ require_once(get_root_dir() . '/static/html/header.php');
 require_once(get_root_dir() . '/hosting-nav.php');
 setHostingNav(array('Home','Contact Us'), 'Contact Us');
 
+require_once('../vendor/autoload.php');
+use Mailgun\Mailgun;
+
 if (!isset($_POST['contact'])) {
     getPreContactView();
     unset($GLOBALS['sent']);
@@ -33,6 +36,7 @@ if (!isset($_POST['contact'])) {
     }
 
     if ($error) {
+        unset($GLOBALS['sent']);
         getPreContactView($name, $email, $county, $message);
         ?>
         <script>
@@ -40,23 +44,33 @@ if (!isset($_POST['contact'])) {
         </script>
         <?php
     } else {
+        $subject = $name . ' - ' . $email . ' - ' . $county . ' County';
+
         if (!isset($GLOBALS['sent'])) {
             $to = 'mattbendel60@gmail.com';
-            $subject = $name . ' - ' . $email . ' - ' . $county . ' County';
-            require 'vendor/autoload.php';
-            # Instantiate the client.
-            $mgClient = new Mailgun\Mailgun('284c125d45c2f111b58c522a809f3cad-8b34de1b-b8235432');
-            $domain = "https://api.mailgun.net/v3/sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org";
-            # Make the call to the client.
-            $result = $mgClient->sendMessage($domain, array(
-                'from'	=> $name . ' <' . $email . '>',
-                'to'	=> 'RSMA L.L.C <' . $to .'>',
-                'subject' => $subject,
-                'text'	=> $message
-            ));
+
+            $email = new \SendGrid\Mail\Mail();
+            $email->setFrom("auto@rsmallcservices.com", "Auto");
+            $email->setSubject($subject);
+            $email->addTo($to, "Example User");
+            $email->addContent("text/plain", $message);
+            $email->addContent(
+                "text/html", "<strong>$message</strong>"
+            );
+            $sendgrid = new \SendGrid('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');
+            try {
+                $response = $sendgrid->send($email);
+                print $response->statusCode() . "\n";
+                print_r($response->headers());
+                print $response->body() . "\n";
+            } catch (Exception $e) {
+                echo 'Caught exception: '. $e->getMessage() ."\n";
+            }
 
             $GLOBALS['sent'] = 'sent';
+            var_dump($name);
         }
+
         getPostContactView($subject, $message);
     }
 }
