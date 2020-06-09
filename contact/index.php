@@ -49,26 +49,33 @@ if (!isset($_POST['contact'])) {
         if (!isset($GLOBALS['sent'])) {
             $to = 'mattbendel60@gmail.com';
 
+//            $email = new \SendGrid\Mail\Mail();
+//            $email->setFrom("auto@rsmallcservices.com", "Auto");
+//            $email->setSubject($subject);
+//            $email->addTo($to, "Example User");
+//            $email->addContent("text/plain", $message);
+//            $email->addContent(
+//                "text/html", "<strong>$message</strong>"
+//            );
             $email = new \SendGrid\Mail\Mail();
-            $email->setFrom("auto@rsmallcservices.com", "Auto");
-            $email->setSubject($subject);
-            $email->addTo($to, "Example User");
-            $email->addContent("text/plain", $message);
+            $email->setFrom("test@example.com", "Example User");
+            $email->setSubject("Sending with SendGrid is Fun");
+            $email->addTo("test@example.com", "Example User");
+            $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
             $email->addContent(
-                "text/html", "<strong>$message</strong>"
+                "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
             );
-            $sendgrid = new \SendGrid('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');
+            $sendgrid = new \SendGrid('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');
             try {
                 $response = $sendgrid->send($email);
                 print $response->statusCode() . "\n";
                 print_r($response->headers());
                 print $response->body() . "\n";
             } catch (Exception $e) {
-                echo 'Caught exception: '. $e->getMessage() ."\n";
+                die('Caught exception: '. $e->getMessage() ."\n");
             }
 
             $GLOBALS['sent'] = 'sent';
-            var_dump($name);
         }
 
         getPostContactView($subject, $message);
