@@ -50,13 +50,12 @@ if (!isset($_POST['contact'])) {
         $domain = "sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org";
         # Make the call to the client.
         $params = array(
-            'from'	=> 'Excited User <mailgun@sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org>',
-            'to'	=> 'mattbendel60@gmail.com',
+            'from'	=> 'RSMA L.L.C Services <mailgun@sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org>',
+            'to'	=> 'rsmallc18@gmail.com',
             'subject' => $subject,
             'text'	=> $message
         );
         $response = $mgClient->messages()->send($domain, $params);
-        var_dump(json_decode($response));
         getPostContactView($subject, $message);
     }
 }
