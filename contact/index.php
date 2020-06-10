@@ -5,7 +5,7 @@ require_once(get_root_dir() . '/static/html/header.php');
 require_once(get_root_dir() . '/hosting-nav.php');
 setHostingNav(array('Home','Contact Us'), 'Contact Us');
 
-require_once('../vendor/autoload.php');
+require '../vendor/autoload.php';
 use Mailgun\Mailgun;
 
 if (!isset($_POST['contact'])) {
@@ -55,7 +55,7 @@ if (!isset($_POST['contact'])) {
             'subject' => $subject,
             'text'	=> $message
         ));
-
+        var_dump($result);
         getPostContactView($subject, $message);
     }
 }
