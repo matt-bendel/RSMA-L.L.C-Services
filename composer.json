@@ -1,8 +1,9 @@
 {
   "require": {
-    "mailgun/mailgun-php": "*",
+    "mailgun/mailgun-php": "^3.0",
     "php-http/guzzle6-adapter": "*",
-    "php-http/message": "*"
+    "php-http/message": "*",
+    "kriswallsmith/buzz": "^1.1",
+    "nyholm/psr7": "^1.3"
   }
 }
-
