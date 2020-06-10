@@ -11,6 +11,7 @@
             </div>
             <div class="row" style="margin-top: 15px;">
                 <div class="col-md-4 center-div" style="padding-top: 10px;">
+                    <img alt src="static/assets/steph.jpg" style="height: 400px; width: 300px; margin-top: 40px;">
                 </div>
                 <div class="col-md-8" style="padding-top: 10px; padding-left: 30px;">
                     <p class="title-text">Who are we?</p>

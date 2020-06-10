@@ -45,28 +45,16 @@ if (!isset($_POST['contact'])) {
         <?php
     } else {
         $subject = $name . ' - ' . $email . ' - ' . $county . ' County';
-
-//        if (!isset($GLOBALS['sent'])) {
-//            $to = 'mattbendel60@gmail.com';
-//
-//            $email = new \SendGrid\Mail\Mail();
-//            $email->setFrom("noreply@rsmallcservices.com");
-//            $email->setSubject($subject);
-//            $email->addTo($to);
-//            $email->addContent("text/plain", $message);
-//
-//            $sendgrid = new \SendGrid('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');
-//            try {
-//                $response = $sendgrid->send($email);
-//                print $response->statusCode() . "\n";
-//                print_r($response->headers());
-//                print $response->body() . "\n";
-//            } catch (Exception $e) {
-//                die('Caught exception: '. $e->getMessage() ."\n");
-//            }
-//
-//            $GLOBALS['sent'] = 'sent';
-//        }
+        # Instantiate the client.
+        $mgClient = new Mailgun('284c125d45c2f111b58c522a809f3cad-8b34de1b-b8235432');
+        $domain = "https://api.mailgun.net/v3/sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org/messages";
+        # Make the call to the client.
+        $result = $mgClient->sendMessage($domain, array(
+            'from'	=> 'Excited User <mailgun@sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org>',
+            'to'	=> 'Matt <mattbendel60@gmail.com>',
+            'subject' => $subject,
+            'text'	=> $message
+        ));
 
         getPostContactView($subject, $message);
     }

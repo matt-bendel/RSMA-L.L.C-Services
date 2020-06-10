@@ -9,36 +9,40 @@ class ComposerStaticInit257fa97db28f3e69a0680c26687304f4
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'SendGrid\\Stats\\' => 15,
-            'SendGrid\\Mail\\' => 14,
-            'SendGrid\\Contacts\\' => 18,
-            'SendGrid\\' => 9,
+            'Symfony\\Component\\EventDispatcher\\' => 34,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'SendGrid\\Stats\\' => 
+        'Symfony\\Component\\EventDispatcher\\' => 
         array (
-            0 => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/stats',
-        ),
-        'SendGrid\\Mail\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/mail',
-        ),
-        'SendGrid\\Contacts\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/contacts',
-        ),
-        'SendGrid\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sendgrid/php-http-client/lib',
+            0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
     );
 
-    public static $classMap = array (
-        'BaseSendGridClientInterface' => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/BaseSendGridClientInterface.php',
-        'SendGrid' => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/SendGrid.php',
-        'TwilioEmail' => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/TwilioEmail.php',
+    public static $prefixesPsr0 = array (
+        'M' => 
+        array (
+            'Mailgun\\Tests' => 
+            array (
+                0 => __DIR__ . '/..' . '/mailgun/mailgun-php/tests',
+            ),
+            'Mailgun' => 
+            array (
+                0 => __DIR__ . '/..' . '/mailgun/mailgun-php/src',
+            ),
+        ),
+        'G' => 
+        array (
+            'Guzzle\\Tests' => 
+            array (
+                0 => __DIR__ . '/..' . '/guzzle/guzzle/tests',
+            ),
+            'Guzzle' => 
+            array (
+                0 => __DIR__ . '/..' . '/guzzle/guzzle/src',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -46,7 +50,7 @@ class ComposerStaticInit257fa97db28f3e69a0680c26687304f4
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit257fa97db28f3e69a0680c26687304f4::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit257fa97db28f3e69a0680c26687304f4::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit257fa97db28f3e69a0680c26687304f4::$classMap;
+            $loader->prefixesPsr0 = ComposerStaticInit257fa97db28f3e69a0680c26687304f4::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
