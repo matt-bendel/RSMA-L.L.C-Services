@@ -51,7 +51,7 @@ if (!isset($_POST['contact'])) {
         # Make the call to the client.
         $result = $mgClient->sendMessage($domain, array(
             'from'	=> 'Excited User <mailgun@sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org>',
-            'to'	=> 'Matt <mattbendel60@gmail.com>',
+            'to'	=> 'mattbendel60@gmail.com',
             'subject' => $subject,
             'text'	=> $message
         ));
