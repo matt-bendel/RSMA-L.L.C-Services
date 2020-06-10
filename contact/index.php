@@ -46,16 +46,17 @@ if (!isset($_POST['contact'])) {
     } else {
         $subject = $name . ' - ' . $email . ' - ' . $county . ' County';
         # Instantiate the client.
-        $mgClient = new Mailgun('284c125d45c2f111b58c522a809f3cad-8b34de1b-b8235432');
-        $domain = "https://api.mailgun.net/v3/sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org/messages";
+        $mgClient = Mailgun::create('284c125d45c2f111b58c522a809f3cad-8b34de1b-b8235432', 'https://api.mailgun.net/v3/sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org/messages');
+        $domain = "sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org/messages";
         # Make the call to the client.
-        $result = $mgClient->sendMessage($domain, array(
+        $params = array(
             'from'	=> 'Excited User <mailgun@sandbox6a5f749dad6848468e056ed07e74b052.mailgun.org>',
             'to'	=> 'mattbendel60@gmail.com',
             'subject' => $subject,
             'text'	=> $message
-        ));
-        var_dump($result);
+        );
+        $response = $mgClient->messages()->send($domain, $params);
+        var_dump(json_decode($response));
         getPostContactView($subject, $message);
     }
 }
