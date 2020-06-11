@@ -32,7 +32,7 @@
                         Stephanie began her title career in Florida, where she was a licensed notary and title agent.
                         Upon her return to Ohio, she pursued her degree and started RSMA LLC Services. Her knowledge
                         of title translated to Ohio and she started mobile closings with title services. Stephanie is
-                        appily married to her high school sweetheart and they have two children.
+                        happily married to her high school sweetheart and they have two children.
                     </p>
                 </div>
             </div>
