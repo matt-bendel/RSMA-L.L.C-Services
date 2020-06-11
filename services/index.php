@@ -12,14 +12,24 @@ setHostingNav(array('Home','Services'), 'Our Services');
             <hr />
         </div>
         <div style="font-family: Roboto; margin-left: 30px;">
-            BANANAS
+            <p style="margin-right: 5px; font-family: Roboto; font-size: 16px;">
+                RSMA LLC Services offers comprehensive services that include updating title and filing the documentation.
+                When a transaction is ready to file, we will check the title from the date of commitment until the date of
+                filing. This ensures that there hasn’t been any new transactions before the filing of the deed or mortgage.
+                RSMA LLC Services also will assist with completing a walk-through. A walk-through is filing deeds and mortgages
+                within the county.
+            </p>
         </div>
         <div class="title-div">
             <p class="title-text">Mobile Notary</p>
             <hr />
         </div>
         <div style="font-family: Roboto; margin-left: 30px;">
-            BANANAS
+            <p style="margin-right: 5px; font-family: Roboto; font-size: 16px;">
+                A mobile notary is a notary public who travels to clients for purposes of notarizing a single signature
+                or assist in a loan signing. Our specialty at RSMA LLC Services is traveling to Seller/Buyers  to assist
+                in the closing of real estate transactions.
+            </p>
         </div>
         <div class="title-div">
             <p class="title-text">Online Notary</p>
