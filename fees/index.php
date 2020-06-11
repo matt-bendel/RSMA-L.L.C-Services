@@ -12,7 +12,7 @@ if (!$GLOBALS['mobile']) {
 <?php } else { ?>
     <div class="center-div" style="font-family: Roboto; font-size: 14px; margin-bottom: 15px;">
         <p>
-            Note: Photo ID is required for Notarial Services.
+            Note: If your county is not listed below there may be additional fees.
         </p>
     </div>
 <?php } ?>
