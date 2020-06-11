@@ -1,6 +1,7 @@
 <?php
     header('Content-Type: text/html');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/main.inc.php');
+    $GLOBALS['mobile'] = preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 ?>
 <html lang="en">
 <head>
@@ -36,7 +37,7 @@
         function displayIdMessage(message) {
             let $id = $('<div id="id-banner" class="id-banner" style="margin-bottom: 15px; margin-top: 15px;"></div>');
             $('<p class="id-stripe" ></p>').appendTo($id);
-            $('<p id="id-text" class="id-text" ><strong>' + message + '</strong></p>').appendTo($id);
+            $('<p id="id-text" class="id-text" style="font-size: 14px;"><strong>' + message + '</strong></p>').appendTo($id);
 
             $(document).ready(function() {
                 $('#id-banner').before($id);
@@ -71,7 +72,7 @@
             <img id="logo" alt src="/static/assets/logo.png">
         </a>
     </div>
-    <?php if (!preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"])) {
+    <?php if (!$GLOBALS['mobile']) {
         ?>
     <div class="topnav">
         <a href="http://<?php echo get_root_url() ?>">Home</a>

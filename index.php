@@ -20,6 +20,11 @@
                         RSMA L.L.C Services is a company based out of northeast Ohio, specializing in title services.
                         The services our company provides can be found <a href="/services">here</a>.
                     </p>
+                    <hr />
+                    <div class="center-div" style="margin-right: 50px;">
+                        <img alt src="static/assets/vet.png">
+                    </div>
+                    <hr />
                     <p style="font-size:16px; font-family: Roboto; margin-right: 30px; margin-bottom: 25px;">
                         Stephanie Bendel Samples is the found of RSMA L.L.C Services. She is a United States Air Force
                         Veteran and a 2019 graduate of Kent State with a B.A. in Communications.
