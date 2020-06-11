@@ -27,7 +27,7 @@
 
             let $error = $('<div id="warning-banner" class="warning-banner" style="margin-bottom: 15px; margin-top: 15px;"></div>');
             $('<p class="warning-stripe" ></p>').appendTo($error);
-            $('<p id="warning-text" class="warning-text"  style="font-size: 14px;"><strong>' + message + '</strong></p>').appendTo($error);
+            $('<p id="warning-text" class="warning-text"  style="font-size: 14px; color: black;"><strong>' + message + '</strong></p>').appendTo($error);
 
             $(document).ready(function() {
                 $('#contactForm').before($error);
@@ -37,7 +37,7 @@
         function displayIdMessage(message) {
             let $id = $('<div id="id-banner" class="id-banner" style="margin-bottom: 15px; margin-top: 15px;"></div>');
             $('<p class="id-stripe" ></p>').appendTo($id);
-            $('<p id="id-text" class="id-text" style="font-size: 14px;"><strong>' + message + '</strong></p>').appendTo($id);
+            $('<p id="id-text" class="id-text" style="font-size: 14px; color: black;"><strong>' + message + '</strong></p>').appendTo($id);
 
             $(document).ready(function() {
                 $('#id-banner').before($id);
