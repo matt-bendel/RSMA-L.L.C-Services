@@ -71,7 +71,8 @@
             <img id="logo" alt src="/static/assets/logo.png">
         </a>
     </div>
-
+    <?php if (!preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"])) {
+        ?>
     <div class="topnav">
         <a href="http://<?php echo get_root_url() ?>">Home</a>
         <a href="/what-is-a-notary">What is a Notary?</a>
@@ -85,6 +86,10 @@
             <img style="width: 100px; height: 100px;" id="logo" alt src="/static/assets/notary.png">
         </a>
     </div>
+    <?php
+        }
+    ?>
+
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
