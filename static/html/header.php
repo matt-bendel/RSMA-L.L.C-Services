@@ -47,6 +47,7 @@
 </head>
 <body>
 <nav class="navbar navbar-default navbar-primary container-fluid" style="background-color: slategrey; box-shadow: 0px 2px 4px rgba(0,0,0,0.2);">
+    <?php if ($GLOBALS['mobile']) {?>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="linkDiv">
@@ -65,9 +66,12 @@
             <a href="/contact">Contact Us</a>
         </div>
     </div>
+    <?php } ?>
 
     <div class="navbar-brand" style="margin-left: 0px !important; padding-bottom: 0px !important; padding-top: 0px !important;">
+        <?php if ($GLOBALS['mobile']) { ?>
         <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+        <?php } ?>
         <a id="logo" href="http://<?php echo get_root_url() ?>" title="RSMA LLC Services">
             <img id="logo" alt src="/static/assets/logo.png">
         </a>
