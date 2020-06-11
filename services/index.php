@@ -3,10 +3,18 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/main.inc.php');
 require_once(get_root_dir() . '/static/html/header.php');
 require_once(get_root_dir() . '/hosting-nav.php');
 setHostingNav(array('Home','Services'), 'Our Services');
+if (!$GLOBALS['mobile']) {
 ?>
         <script>
             displayIdMessage('Note: Photo ID is required for Notarial Services.');
         </script>
+<?php } else { ?>
+        <div class="center-div" style="font-family: Roboto; font-size: 14px; margin-bottom: 15px;">
+            <p>
+                Note: Photo ID is required for Notarial Services.
+            </p>
+        </div>
+<?php } ?>
         <div class="title-div" id="id-banner" >
             <p class="title-text">Title Services</p>
             <hr />

@@ -4,10 +4,18 @@ require_once(get_root_dir() . '/static/html/header.php');
 require_once('services.php');
 require_once(get_root_dir() . '/hosting-nav.php');
 setHostingNav(array('Home','Fees'), 'Our Fees');
-?>
+if (!$GLOBALS['mobile']) {
+    ?>
     <script>
         displayIdMessage('Note: If your county is not listed below there may be additional fees.');
     </script>
+<?php } else { ?>
+    <div class="center-div" style="font-family: Roboto; font-size: 14px; margin-bottom: 15px;">
+        <p>
+            Note: Photo ID is required for Notarial Services.
+        </p>
+    </div>
+<?php } ?>
     <div id="id-banner" class="title-div">
         <p class="title-text">Fees</p>
         <hr />

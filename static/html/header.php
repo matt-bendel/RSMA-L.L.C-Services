@@ -27,7 +27,7 @@
 
             let $error = $('<div id="warning-banner" class="warning-banner" style="margin-bottom: 15px; margin-top: 15px;"></div>');
             $('<p class="warning-stripe" ></p>').appendTo($error);
-            $('<p id="warning-text" class="warning-text" ><strong>' + message + '</strong></p>').appendTo($error);
+            $('<p id="warning-text" class="warning-text"  style="font-size: 14px;"><strong>' + message + '</strong></p>').appendTo($error);
 
             $(document).ready(function() {
                 $('#contactForm').before($error);
