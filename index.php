@@ -6,7 +6,7 @@
 ?>
             <div class="title-div">
                 <p class="title-text">Notary and Title Services</p>
-                <p class="title-subtext">Now serving Northeast Ohio.</p>
+                <p class="title-subtext">Now serving northeast Ohio.</p>
                 <hr />
             </div>
             <div class="row" style="margin-top: 15px;">

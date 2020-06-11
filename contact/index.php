@@ -61,13 +61,13 @@ if (!isset($_POST['contact'])) {
 }
 ?>
 <!--Contact us forms end here-->
-        <div class="title-div" style="margin-left: 165px;">
+        <div class="title-div" style="margin-left: 165px; letter-spacing: 1px;">
             <p class="title-text">Contact Info:</p>
             <p class="title-subtext-2">Phone: (330) 697 - 4049</p>
             <p class="title-subtext-2">Address: </p>
             <p class="title-subtext-2">P.O. Box 383, </p>
             <p class="title-subtext-2">Greentown,OH 44630 </p>
-            <p class="title-subtext-2">Email: rsmallc18@gamil.com</p>
+            <p class="title-subtext-2">Email: rsmallc18@gmail.com</p>
         </div>
         </section>
 
